@@ -4,7 +4,7 @@ import MainBlock from "./components/mainBlock";
 import LoginVerification from "./components/LoginVerification";
 import TicketManager from "./components/TicketManager/TicketManager";
 import EnglishTrainer from "./components/EnglishTrainer";
-import MarkList from "./components/markList";
+import MarkList from "./components/markList.jsx";
 import SiteDomen from "./components/siteDomen";
 import Kitchen from "./components/Kitchen";
 

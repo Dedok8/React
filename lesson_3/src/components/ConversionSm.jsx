@@ -15,7 +15,7 @@ function ConversionSm() {
         <input
           type="number"
           value={sm}
-          onChange={(e) => setSm(Number(e.target.value))}
+          onChange={(e) => setSm(e.target.value)}
           placeholder="Введіть кількіть сантиметрів "
         />
       </label>

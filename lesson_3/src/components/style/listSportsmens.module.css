@@ -1,0 +1,28 @@
+.listContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.listMainTitle {
+  font-size: 28px;
+}
+
+.listTitleGreen {
+  font-size: 20px;
+  color: green;
+}
+
+.listTitleRed {
+  font-size: 20px;
+  color: red;
+}
+
+.listMain > li {
+  list-style: none;
+}
+
+.listMain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

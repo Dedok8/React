@@ -6,6 +6,7 @@ import Temperature from "./components/Temperature";
 import Sapper from "./components/Sapper";
 import ListSportsmens from "./components/ListSportsmens";
 import PairsList from "./components/PairsList";
+import FindWorker from "./components/FindWorker";
 
 const gameObjField = [
   {
@@ -76,6 +77,16 @@ function App() {
           }
         >
           <PairsList />
+        </MainBlock>
+      </div>
+      <div className={styles.container}>
+        <MainBlock
+          title="Задача 7. "
+          description={
+            " Динамічний пошук. Є список працівників і поле пошуку. При введенні відображаються усі, які містять вказаний фрагмент"
+          }
+        >
+          <FindWorker />
         </MainBlock>
       </div>
     </>

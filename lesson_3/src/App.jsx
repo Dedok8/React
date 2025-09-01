@@ -3,7 +3,7 @@ import styles from "./components/style/mainBlock.module.css";
 import MainBlock from "./components/MainBlock";
 import ConversionSm from "./components/ConversionSm";
 import Temperature from "./components/Temperature";
-import Sapper from "./components/sapper";
+import Sapper from "./components/Sapper";
 import ListSportsmens from "./components/ListSportsmens";
 import PairsList from "./components/PairsList";
 

@@ -1,7 +1,7 @@
 import "./App.css";
 import styles from "./components/style/mainBlock.module.css";
 import MainBlock from "./components/MainBlock";
-import ConversionSm from "./components/conversionSm";
+import ConversionSm from "./components/ConversionSm";
 import Temperature from "./components/Temperature";
 import Sapper from "./components/sapper";
 import ListSportsmens from "./components/ListSportsmens";

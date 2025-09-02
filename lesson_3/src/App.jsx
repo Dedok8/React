@@ -7,6 +7,7 @@ import Sapper from "./components/Sapper";
 import ListSportsmens from "./components/ListSportsmens";
 import PairsList from "./components/PairsList";
 import FindWorker from "./components/FindWorker";
+import InputFocus from "./components/InputFocus";
 
 const gameObjField = [
   {
@@ -51,7 +52,7 @@ function App() {
       </div>
       <div className={styles.container}>
         <MainBlock
-          title="Однорядковий сапер"
+          title="Задача 3. Однорядковий сапер"
           description={
             "Однорядкова таблиця, до клітинок якої додано інформацію про наявність міни (використати атрибути). Спочатку клітинки сірі. При натисненні на клітинку аналізується чи є там міна і тоді колір стає червоним, якщо немає – зеленим. Додати можливість відкриття усіх сусідніх незамінованих клітинок при відкритті незамінованої клітинки."
           }
@@ -61,7 +62,7 @@ function App() {
       </div>
       <div className={styles.container}>
         <MainBlock
-          title="Задача 5"
+          title="Задача 4"
           description={
             "Дано список спортсменів. Потрібно сформувати список тих, які будуть брати участь у змаганні. При цьому є два стовпці. В одному відображені всі спортсмени, в іншому – список тих, хто був вибраний. При натисканні на зелену стрілку спортсмен переміщається у список для змагань. При натисканні на червону стрілку спортсмен переміщається у загальний список."
           }
@@ -71,7 +72,7 @@ function App() {
       </div>
       <div className={styles.container}>
         <MainBlock
-          title="Задача 6. Пари для танців"
+          title="Задача 5. Пари для танців"
           description={
             " Поступово вибираємо хлопця, дівчину і додаємо у обрані пари. Пару можна видалити. Поки не вибрано хлопця і дівчину кнопка «Додати» заблокована.  Якщо не вистачає хлопців або дівчат вибір також блокується."
           }
@@ -81,12 +82,17 @@ function App() {
       </div>
       <div className={styles.container}>
         <MainBlock
-          title="Задача 7. "
+          title="Задача 6. "
           description={
             " Динамічний пошук. Є список працівників і поле пошуку. При введенні відображаються усі, які містять вказаний фрагмент"
           }
         >
           <FindWorker />
+        </MainBlock>
+      </div>
+      <div className={styles.container}>
+        <MainBlock title="Задача 7. " description={""}>
+          <InputFocus />
         </MainBlock>
       </div>
     </>

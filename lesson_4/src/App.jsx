@@ -1,7 +1,7 @@
 import styles from "./components/style/mainBlock.module.css";
-import MainBlock from './components/MainBlock'
-import TodoManager from './components/Todo/TodoManager'
-import MessageManager from './components/Massage/MessageManager'
+import MainBlock from "./components/MainBlock";
+import TodoManager from "./components/Todo/TodoManager";
+import MessageManager from "./components/Massage/MessageManager";
 
 import "./App.css";
 

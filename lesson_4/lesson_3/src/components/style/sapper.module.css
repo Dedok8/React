@@ -1,0 +1,10 @@
+.tableCell {
+  width: 75px;
+  height: 75px;
+}
+
+.tableCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

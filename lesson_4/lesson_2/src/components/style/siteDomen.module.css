@@ -1,0 +1,20 @@
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+}
+.mainHead {
+  display: flex;
+}
+.mainInfo {
+}
+.mainBody {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.bodyTitle {
+}
+
+li {
+  list-style: none;
+}

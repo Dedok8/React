@@ -1,9 +1,10 @@
-import styles from "./components/style/mainBlock.module.css";
-import MainBlock from "./components/MainBlock";
-import TodoManager from "./components/Todo/TodoManager";
-import MessageManager from "./components/Massage/MessageManager";
+import styles from './components/style/mainBlock.module.css';
+import MainBlock from './components/MainBlock';
+import TodoManager from './components/Todo/TodoManager';
+import MessageManager from './components/Massage/MessageManager';
 
-import "./App.css";
+import './App.css';
+import GuessManagerGame from './components/guessNumber/GuessManagerGame';
 
 function App() {
   return (
@@ -12,15 +13,20 @@ function App() {
         <MainBlock
           title="Задача 1. "
           description={
-            " Динамічний пошук. Є список працівників і поле пошуку. При введенні відображаються усі, які містять вказаний фрагмент"
+            ' Динамічний пошук. Є список працівників і поле пошуку. При введенні відображаються усі, які містять вказаний фрагмент'
           }
         >
           <TodoManager />
         </MainBlock>
       </div>
       <div className={styles.container}>
-        <MainBlock title="Задача 2. " description={""}>
+        <MainBlock title="Задача 2. " description={''}>
           <MessageManager />
+        </MainBlock>
+      </div>
+      <div className={styles.container}>
+        <MainBlock title="Задача 2. " description={''}>
+          <GuessManagerGame />
         </MainBlock>
       </div>
     </>

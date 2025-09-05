@@ -1,0 +1,31 @@
+.managerContainer {
+  display: flex;
+  flex-direction: column;
+}
+.messageItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.messageItemBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.messageItemSpan {
+  font-size: 20px;
+}
+.messageBtn {
+  margin-right: 10px;
+}
+
+.messageItemText {
+  max-width: 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}

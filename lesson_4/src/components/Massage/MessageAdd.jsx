@@ -1,5 +1,5 @@
 function MessageAdd({ addMessage, msgValue, setMsgValue }) {
-  const btnDisabled = msgValue.trim() === "";
+  const btnDisabled = msgValue.trim() === '';
   return (
     <div>
       <label>

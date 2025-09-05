@@ -1,4 +1,4 @@
-import styles from "./style/mainBlock.module.css";
+import styles from './style/mainBlock.module.css';
 
 function MainBlock({ title, description, children }) {
   return (
@@ -11,3 +11,4 @@ function MainBlock({ title, description, children }) {
 }
 
 export default MainBlock;
+``;

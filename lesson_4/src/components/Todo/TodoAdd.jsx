@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-function TodoAdd({ onAdd }) {
-  const [task, setTask] = useState("");
+function TodoAdd({ onAdd, disabled }) {
+  const [task, setTask] = useState('');
+
+  const handleAdd = () => {
+    const trimmedTask = task.trim();
+    if (!trimmedTask) return; // не додаємо пусті рядки
+    onAdd(trimmedTask); // виклик твоєї функції onAdd з TodoManager
+    setTask(''); // очищаємо поле після додавання
+  };
 
   return (
     <div>
@@ -14,7 +21,9 @@ function TodoAdd({ onAdd }) {
           onChange={(e) => setTask(e.target.value)}
         />
       </label>
-      <button onClick={() => onAdd(task)}>Додати задачу</button>
+      <button onClick={handleAdd} disabled={disabled || task.trim() === ''}>
+        Додати задачу
+      </button>
     </div>
   );
 }

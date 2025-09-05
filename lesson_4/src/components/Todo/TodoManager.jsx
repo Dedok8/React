@@ -12,15 +12,15 @@
 
 // 4. ДОДАТИ ФОРМУ ДОДАВАННЯ ЗАВДАНЬ
 
-import { useState } from "react";
-import TodoAdd from './TodoAdd'
-import TodoList from './TodoList'
+import { useState } from 'react';
+import TodoAdd from './TodoAdd';
+import TodoList from './TodoList';
 
 function TodoManager() {
   const [tasksList, setTasksList] = useState([
-    { id: 1, task: "Закінчити презентацію", completed: false },
-    { id: 2, task: "Перевірити макроси у PowerPoint", completed: false },
-    { id: 3, task: "Налаштувати VBA у Excel", completed: true },
+    { id: 1, task: 'Закінчити презентацію', completed: false },
+    { id: 2, task: 'Перевірити макроси у PowerPoint', completed: false },
+    { id: 3, task: 'Налаштувати VBA у Excel', completed: true },
   ]);
 
   const onCompleted = (id) => {
@@ -31,8 +31,8 @@ function TodoManager() {
               ...task,
               completed: true,
             }
-          : task
-      )
+          : task,
+      ),
     );
   };
 
@@ -60,6 +60,7 @@ function TodoManager() {
         onCompleted={onCompleted}
         onDelete={onDelete}
         setTaskList={setTasksList}
+        disabled={tasksList !== ''}
       />
     </>
   );

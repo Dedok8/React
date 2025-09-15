@@ -1,11 +1,15 @@
 .container {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
   border: 1px solid #5a87d4;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+}
+
+.containerModification {
+  max-width: 1200px !important;
 }
 
 .title {
@@ -20,4 +24,6 @@
   margin-bottom: 15px;
   line-height: 1.5;
   color: #555;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }

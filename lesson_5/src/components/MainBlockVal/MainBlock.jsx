@@ -1,4 +1,4 @@
-import styles from "./mainBlock.module.css";
+import styles from './mainBlock.module.css';
 
 function MainBlock({ title, description, children }) {
   return (

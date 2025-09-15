@@ -40,16 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-body {
-  font-family: Arial, sans-serif;
-  /* color: #000; */
-  background-color: #fff;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #fff;
-    background-color: #121212;
-  }
-}

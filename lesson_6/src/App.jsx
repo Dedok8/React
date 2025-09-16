@@ -1,7 +1,10 @@
 import "./App.css";
-import Calculator from "./components/Calc/Calculator1.jsx";
-import MainBlock from "./components/MainBlock/MainBlock.jsx";
-import styles from "./components/MainBlock/mainBlock.module.css";
+import MainBlock from "./components/MainBlockVal/MainBlock.jsx";
+import Calculator from "./components/Calculator/Calculator.jsx";
+import DataGrid from "./components/DataGrid/DataGrid.jsx";
+import Debounce from "./components/Debounce/Debounce.jsx";
+import Window from "./components/Window/Window.jsx";
+import styles from "./components/MainBlockVal/mainBlock.module.css";
 
 function App() {
   return (

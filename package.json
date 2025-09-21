@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Dedok8/React/issues"
   },
-  "homepage": "https://github.com/Dedok8/React#readme"
+  "homepage": "https://github.com/Dedok8/React#readme",
+  "dependencies": {
+    "react-router": "^7.9.1"
+  }
 }

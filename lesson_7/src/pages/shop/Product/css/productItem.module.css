@@ -1,0 +1,23 @@
+.productItem {
+  flex: 0 1 200px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.productItem img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.productItem h3 {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.productItem p {
+  font-weight: bold;
+  color: #333;
+}

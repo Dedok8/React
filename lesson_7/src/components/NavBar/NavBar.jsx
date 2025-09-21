@@ -1,34 +1,39 @@
 import { NavLink } from "react-router";
 import frontRoutes from "../../routes/frontRoutes";
+import styles from "./css/navBar.module.css";
 
 function Navbar() {
   return (
     <nav>
       <NavLink
         to={frontRoutes.pages.home}
-        end
-        className={({ isActive }) => (isActive ? "active" : "")}
+        className={({ isActive }) =>
+          isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
+        }
       >
-        Головна |
+        Головна
       </NavLink>
       <NavLink
         to={frontRoutes.pages.products.index}
-        end
-        className={({ isActive }) => (isActive ? "active" : "")}
+        className={({ isActive }) =>
+          isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
+        }
       >
-        Магазин |
+        Магазин
       </NavLink>
       <NavLink
         to={frontRoutes.pages.paymentRules}
-        end
-        className={({ isActive }) => (isActive ? "active" : "")}
+        className={({ isActive }) =>
+          isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
+        }
       >
-        Правила покупки |
+        Правила покупки
       </NavLink>
       <NavLink
         to={frontRoutes.pages.contacts}
-        end
-        className={({ isActive }) => (isActive ? "active" : "")}
+        className={({ isActive }) =>
+          isActive ? `${styles.active} ${styles.navLink}` : styles.navLink
+        }
       >
         Контакти
       </NavLink>

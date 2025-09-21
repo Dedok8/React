@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router";
 import useFetch from "../../../hooks/useFetch";
 import { ApiRoutes } from "../../../api/ApiRoutes";
-import styles from "./css/ProductDetail.module.css";
+import styles from "../Product/css/productDetail.module.css";
 
 function ProductDetail() {
   const { id } = useParams();

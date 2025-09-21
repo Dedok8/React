@@ -5,7 +5,7 @@ import PaymentRules from "../pages/PaymentRules";
 import Contacts from "../pages/Contacts";
 import PageNotFound from "../pages/PageNotFound";
 import ProductDetail from "../pages/shop/Product/ProductDetail";
-import Layout from "../pages/layout";
+import Layout from "../pages/Layout";
 
 function AppRoutes() {
   return (

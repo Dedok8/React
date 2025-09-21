@@ -19,8 +19,8 @@ function ProductList() {
         <ProductItem
           key={item.id}
           id={item.id}
-          name={item.name}
-          imageUrl={item.imageUrl}
+          title={item.title}
+          image={item.image}
           price={item.price}
         />
       ))}

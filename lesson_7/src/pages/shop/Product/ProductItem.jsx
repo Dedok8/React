@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import frontRoutes from "../../../routes/frontRoutes";
 import styles from "./css/productItem.module.css";
 
-function ProductItem({ id, name, price, imageUrl }) {
+function ProductItem({ id, title, price, image }) {
   return (
     <li className={styles["productItem"]}>
       <Link
@@ -11,13 +11,13 @@ function ProductItem({ id, name, price, imageUrl }) {
       >
         <div>
           <img
-            src={imageUrl}
-            alt={imageUrl}
+            src={image}
+            alt={image}
             style={{ maxWidth: "150px", marginBottom: "10px" }}
           />
         </div>
         <div>
-          <h2>{name}</h2>
+          <h2>{title}</h2>
           <h3>{price}$</h3>
         </div>
       </Link>

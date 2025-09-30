@@ -26,7 +26,7 @@ function UpdateTeacher() {
       }
     };
     fetchTeacher();
-  }, [id]);
+  }, [id, getTeacherById]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

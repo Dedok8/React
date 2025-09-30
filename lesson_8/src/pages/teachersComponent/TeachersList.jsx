@@ -18,6 +18,7 @@ function TeachersList() {
     const storage = localStorage.getItem("selectTeachersId");
     return storage ? JSON.parse(storage) : [];
   });
+
   useEffect(() => {
     fetchTeacher();
   }, [fetchTeacher]);

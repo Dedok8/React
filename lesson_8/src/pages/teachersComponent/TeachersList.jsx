@@ -3,6 +3,7 @@ import useFetch from "../../hook/useFetch";
 import { Link, useNavigate } from "react-router";
 import frontRoutes from "../../routes/frontRoutes";
 import TeachersCard from "../teachersComponent/components/TeachersCard";
+import styles from "./css/teacherList.module.css";
 
 function TeachersList() {
   const navigate = useNavigate();
@@ -17,7 +18,6 @@ function TeachersList() {
     const storage = localStorage.getItem("selectTeachersId");
     return storage ? JSON.parse(storage) : [];
   });
-
   useEffect(() => {
     fetchTeacher();
   }, [fetchTeacher]);
@@ -29,9 +29,10 @@ function TeachersList() {
   const goToMeeting = () => {
     navigate(frontRoutes.navigate.meetings, {
       state: {
-        teachers: teachersList.filter((teacher) =>
-          selectTeachersId.includes(String(teacher.id))
-        ),
+        // teachers: teachersList.filter((teacher) =>
+        //   selectTeachersId.includes(String(teacher.id))
+        // ),
+        id: selectTeachersId,
       },
     });
   };
@@ -57,11 +58,11 @@ function TeachersList() {
   };
 
   let content;
-  if (loading) content = <h2>Loading</h2>;
+  if (loading) content = <h2>Підвантажуємо вчителів</h2>;
   else if (error) content = <h2>Error</h2>;
   else {
     content = (
-      <div>
+      <div className={styles.container}>
         {teachersList.map((teacher) => (
           <TeachersCard
             key={teacher.id}
@@ -83,7 +84,7 @@ function TeachersList() {
 
       <hr />
       <button onClick={goToMeeting} disabled={selectTeachersId.length === 0}>
-        Викликати на збори
+        Викликати {selectTeachersId.length} вчителів на збори
       </button>
       {content}
     </div>

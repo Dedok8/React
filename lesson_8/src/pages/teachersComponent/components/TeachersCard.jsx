@@ -27,7 +27,7 @@ function TeachersCard({
           ) : null}
         </div>
       </div>
-      <div>
+      <div className={styles.btnContainer}>
         {onDelete && (
           <div>
             <button type="button" onClick={() => onDelete(teachers.id)}>

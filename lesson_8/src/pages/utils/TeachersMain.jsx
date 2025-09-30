@@ -1,4 +1,4 @@
-import TeachersList from "./teachersComponent/TeachersList";
+import TeachersList from "../teachersComponent/TeachersList";
 
 function TeachersMain() {
   return (

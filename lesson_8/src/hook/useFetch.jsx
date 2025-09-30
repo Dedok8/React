@@ -20,7 +20,7 @@ function useFetch() {
     }
   }, []);
 
-  const addTeacher = async (teacherData) => {
+  const addTeacher = useCallback(async (teacherData) => {
     setLoading(true);
     setError(null);
     try {
@@ -32,9 +32,9 @@ function useFetch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const updateTeacher = async (id, updateData) => {
+  const updateTeacher = useCallback(async (id, updateData) => {
     setLoading(true);
     setError(null);
     try {
@@ -49,9 +49,9 @@ function useFetch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const deleteTeacher = async (id) => {
+  const deleteTeacher = useCallback(async (id) => {
     setLoading(true);
     setError(null);
     try {
@@ -62,9 +62,9 @@ function useFetch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const getTeacherById = async (id) => {
+  const getTeacherById = useCallback(async (id) => {
     setLoading(true);
     setError(null);
     try {
@@ -75,7 +75,7 @@ function useFetch() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   return {
     data,

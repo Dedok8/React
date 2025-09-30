@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import useFetch from "../../hook/useFetch";
 import frontRoutes from "../../routes/frontRoutes";
+import styles from "./css/addTeaher.module.css";
 
 function AddTeacher() {
-  const { addTeacher } = useFetch();
+  const { loading, error, addTeacher } = useFetch();
   const navigate = useNavigate();
   const [newTeacher, setNewTeacher] = useState({
     name: "",
@@ -19,13 +20,17 @@ function AddTeacher() {
     navigate(frontRoutes.navigate.teachers.index);
   };
 
+  if (loading) return <div>Додаємо вчителів...</div>;
+  else if (error) return <div>{error}</div>;
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <label>
         <input
           type="text"
           placeholder="Введіть ім'я"
           value={newTeacher.name}
+          required
           onChange={(e) =>
             setNewTeacher((prev) => ({ ...prev, name: e.target.value }))
           }
@@ -36,6 +41,7 @@ function AddTeacher() {
           type="text"
           placeholder="Введіть предмет"
           value={newTeacher.subject}
+          required
           onChange={(e) =>
             setNewTeacher((prev) => ({ ...prev, subject: e.target.value }))
           }
@@ -52,8 +58,10 @@ function AddTeacher() {
         />
       </label>
 
-      <button type="submit">Додати вчителя</button>
-      <button onClick={() => navigate(-1)}>Назад</button>
+      <div className={styles.btnContainer}>
+        <button type="submit">Додати вчителя</button>
+        <button onClick={() => navigate(-1)}>Назад</button>
+      </div>
     </form>
   );
 }

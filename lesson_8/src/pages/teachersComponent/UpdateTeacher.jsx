@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import useFetch from "../../hook/useFetch";
+import styles from "./css/updateTeacher.module.css";
 
 function UpdateTeacher() {
   const { id } = useParams();
@@ -34,12 +35,17 @@ function UpdateTeacher() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!editForm.name.trim() || !editForm.subject.trim()) {
+      alert("Поле не мже бути пустим");
+      return;
+    }
     await updateTeacher(id, editForm);
     navigate(-1);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <label>
         Надайте нове ім'я
         <input
@@ -70,10 +76,12 @@ function UpdateTeacher() {
           onChange={handleChange}
         />
       </label>
-      <button type="submit">Зберегти зміни</button>
-      <button type="button" onClick={() => navigate(-1)}>
-        Назад
-      </button>
+      <div className={styles.btnContainer}>
+        <button type="submit">Зберегти зміни</button>
+        <button type="button" onClick={() => navigate(-1)}>
+          Назад
+        </button>
+      </div>
     </form>
   );
 }

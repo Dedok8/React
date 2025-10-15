@@ -1,5 +1,6 @@
 npm create vite@latest . -- --template react
 
-npm i react-router
+
+
 
 npm install axios

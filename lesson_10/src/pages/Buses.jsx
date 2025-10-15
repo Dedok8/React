@@ -1,4 +1,4 @@
-import BusesList from "@/components/buses/bussesList";
+import BusesList from "@/components/buses/BussesList";
 import { TravelContext } from "@/context/TravelContext";
 import { TravelDataContext } from "@/context/TravelDataContext";
 import { useContext } from "react";

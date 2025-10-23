@@ -7,8 +7,8 @@ import {
 } from "@/store/postsThunks";
 import { setCurrentPage } from "@/store/postsSlice";
 import PostsList from "./components/PostsList";
-import PostForm from "./components/PostForm";
 import PaginationBlock from "./components/PaginationBlock";
+import PostForm from "./components/postForm";
 
 function PostsPage() {
   const {

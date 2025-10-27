@@ -1,4 +1,0 @@
-[build]
-  base = "lesson_12"
-  command = "npm run build"
-  publish = "lesson_12/dist"

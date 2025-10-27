@@ -1,9 +1,12 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const postsApi = createApi({
-  reducerPath: 'postsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
-  tagTypes: ['Post', 'Posts'],
+  reducerPath: "postsApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:3000",
+    // baseUrl: "https://lesson-13-back-xqjk.onrender.com/",
+  }),
+  tagTypes: ["Post", "Posts"],
   endpoints: (build) => ({
     // Список постів з пагінацією (build.query)
     getPostsP: build.query({
@@ -12,16 +15,16 @@ export const postsApi = createApi({
       providesTags: (result) =>
         result
           ? [
-              ...result.items.map(({ id }) => ({ type: 'Post', id })),
-              { type: 'Posts', id: 'LIST' },
+              ...result.items.map(({ id }) => ({ type: "Post", id })),
+              { type: "Posts", id: "LIST" },
             ]
-          : [{ type: 'Posts', id: 'LIST' }],
+          : [{ type: "Posts", id: "LIST" }],
     }),
 
     // Деталі поста
     getPostById: build.query({
       query: (id) => `/posts/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Post', id }],
+      providesTags: (result, error, id) => [{ type: "Post", id }],
     }),
 
     // Нескінченне завантаження (build.infiniteQuery)
@@ -36,22 +39,22 @@ export const postsApi = createApi({
         result
           ? [
               ...result.pages.flatMap((page) =>
-                page.items.map(({ id }) => ({ type: 'Post', id }))
+                page.items.map(({ id }) => ({ type: "Post", id }))
               ),
-              { type: 'Posts', id: 'LIST' },
+              { type: "Posts", id: "LIST" },
             ]
-          : [{ type: 'Posts', id: 'LIST' }],
+          : [{ type: "Posts", id: "LIST" }],
     }),
 
     // Видалити пост
     deletePost: build.mutation({
       query: (id) => ({
         url: `/posts/${id}`,
-        method: 'DELETE',
+        method: "DELETE",
       }),
       invalidatesTags: (result, error, id) => [
-        { type: 'Posts', id: 'LIST' },
-        { type: 'Post', id },
+        { type: "Posts", id: "LIST" },
+        { type: "Post", id },
       ],
     }),
 
@@ -59,21 +62,43 @@ export const postsApi = createApi({
     likePost: build.mutation({
       query: (id) => ({
         url: `/posts/${id}/like`,
-        method: 'POST',
+        method: "POST",
       }),
-      invalidatesTags: (result, error, id) => [{ type: 'Post', id }],
+      invalidatesTags: (result, error, id) => [{ type: "Post", id }],
     }),
 
     // Дислайк поста
     dislikePost: build.mutation({
       query: (id) => ({
         url: `/posts/${id}/dislike`,
-        method: 'POST',
+        method: "POST",
       }),
-      invalidatesTags: (result, error, id) => [{ type: 'Post', id }],
+      invalidatesTags: (result, error, id) => [{ type: "Post", id }],
+    }),
+
+    updatePosts: build.mutation({
+      query: ({ id, ...patch }) => ({
+        url: `/posts/${id}`,
+        method: "PUT",
+        body: patch,
+      }),
+      invalidatesTags: (result, error, { id }) => [
+        { type: "Post", id },
+        { type: "Posts", id: "LIST" },
+      ],
+    }),
+
+    //Додавання поста
+    addPost: build.mutation({
+      query: (newPost) => ({
+        url: "posts",
+        method: "POST",
+        body: newPost,
+      }),
+      invalidatesTags: [{ type: "Post", id: "LIST" }],
     }),
   }),
-})
+});
 
 export const {
   useGetPostsPQuery,
@@ -82,4 +107,6 @@ export const {
   useDeletePostMutation,
   useLikePostMutation,
   useDislikePostMutation,
-} = postsApi
+  useAddPostMutation,
+  useUpdatePostsMutation,
+} = postsApi;

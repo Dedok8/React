@@ -1,55 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import {
   useGetPostsPQuery,
   useDeletePostMutation,
   useLikePostMutation,
   useDislikePostMutation,
-} from '../../api/postsApi'
-import { useNavigate } from 'react-router'
+} from "../../api/postsApi";
+import { useNavigate } from "react-router";
 
 const PostsList = ({ onSelect }) => {
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1);
   const { data, isLoading, isError, isFetching } = useGetPostsPQuery({
     page,
     limit: 5,
-  })
+  });
 
-  const [deletePost] = useDeletePostMutation()
-  const [likePost] = useLikePostMutation()
-  const [dislikePost] = useDislikePostMutation()
+  const [deletePost] = useDeletePostMutation();
+  const [likePost] = useLikePostMutation();
+  const [dislikePost] = useDislikePostMutation();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  if (isLoading) return <p>Завантаження...</p>
-  if (isError) return <p>Помилка завантаження постів</p>
+  if (isLoading) return <p>Завантаження...</p>;
+  if (isError) return <p>Помилка завантаження постів</p>;
 
-  const { items, totalPages, remaining } = data
+  const { items, totalPages, remaining } = data;
 
   return (
     <div>
-      <ul style={{ padding: 0, listStyle: 'none' }}>
+      <ul style={{ padding: 0, listStyle: "none" }}>
         {items.map((post) => (
           <li
             key={post.id}
             style={{
-              marginBottom: '10px',
-              borderBottom: '1px solid #ccc',
-              paddingBottom: '10px',
+              marginBottom: "10px",
+              borderBottom: "1px solid #ccc",
+              paddingBottom: "10px",
             }}
           >
             <strong>{post.title}</strong>
+            <strong>{post.body}</strong>
             <div>
-              Лайки: {post.likesNumber}{' '}
-              <button onClick={() => likePost(post.id)}>👍</button> Дислайки:{' '}
-              {post.dislikesNumber}{' '}
-              <button onClick={() => dislikePost(post.id)}>👎</button>{' '}
-              <button onClick={() => onSelect(post.id)}>Деталі</button>{' '}
+              Лайки: {post.likesNumber}{" "}
+              <button onClick={() => likePost(post.id)}>👍</button> Дислайки:{" "}
+              {post.dislikesNumber}{" "}
+              <button onClick={() => dislikePost(post.id)}>👎</button>{" "}
+              <button onClick={() => onSelect(post.id)}>Деталі</button>{" "}
               <button onClick={() => navigate(`/posts/edit/${post.id}`)}>
                 Редагувати
-              </button>{' '}
+              </button>{" "}
               <button
                 onClick={() => {
-                  if (window.confirm('Видалити пост?')) deletePost(post.id)
+                  if (window.confirm("Видалити пост?")) deletePost(post.id);
                 }}
               >
                 Видалити
@@ -60,7 +61,7 @@ const PostsList = ({ onSelect }) => {
       </ul>
       {isFetching && <p>Оновлення...</p>}
       <hr />
-      <div style={{ marginTop: '20px' }}>
+      <div style={{ marginTop: "20px" }}>
         <button
           onClick={() => setPage((p) => Math.max(p - 1, 1))}
           disabled={page === 1}
@@ -72,8 +73,8 @@ const PostsList = ({ onSelect }) => {
             key={i}
             onClick={() => setPage(i + 1)}
             style={{
-              fontWeight: page === i + 1 ? 'bold' : 'normal',
-              color: page === i + 1 ? 'red' : '',
+              fontWeight: page === i + 1 ? "bold" : "normal",
+              color: page === i + 1 ? "red" : "",
             }}
           >
             {i + 1}
@@ -87,7 +88,7 @@ const PostsList = ({ onSelect }) => {
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostsList
+export default PostsList;

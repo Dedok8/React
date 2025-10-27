@@ -1,5 +1,9 @@
-const PostEditPage = () => {
-  return <div>Edit page</div>
-}
+import { useParams } from "react-router";
+import PostForm from "./PostsPage/PostForm";
 
-export default PostEditPage
+const PostEditPage = () => {
+  const { id } = useParams();
+  return <>{id ? <PostForm postId={id} /> : "завантаження"}</>;
+};
+
+export default PostEditPage;

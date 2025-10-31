@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const postsApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000",
-    // baseUrl: "https://lesson-13-back-xqjk.onrender.com/",
+    // baseUrl: "http://localhost:3000",
+    baseUrl: "https://lesson-13-back-xqjk.onrender.com/",
   }),
   tagTypes: ["Post", "Posts"],
   endpoints: (build) => ({

@@ -7,7 +7,7 @@ const frontRoutes = {
       details: ":id",
     },
     doctors: {
-      base: "doctors",
+      base: "admin/doctors",
       edit: ":id/edit",
       details: ":id",
     },
@@ -28,9 +28,9 @@ const frontRoutes = {
     },
 
     doctors: {
-      base: "/doctors",
-      edit: (id) => (id ? `/doctors/${id}/edit` : `/doctors/new`),
-      details: (id) => `/doctors/${id}`,
+      base: "/admin/doctors",
+      edit: (id) => (id ? `/admin/doctors/${id}/edit` : `/admin/doctors/new`),
+      details: (id) => `/admin/doctors/${id}`,
     },
 
     appointments: {

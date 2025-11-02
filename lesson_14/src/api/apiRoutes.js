@@ -1,5 +1,5 @@
 const apiRoutes = {
-  // Пацієнти
+  // === Пацієнти ===
   patients: {
     base: "/patients",
     getAll: "/patients",
@@ -10,7 +10,7 @@ const apiRoutes = {
     filterByName: (name) => `/patients?name=${encodeURIComponent(name)}`,
   },
 
-  // Прийоми
+  // === Прийоми ===
   appointments: {
     base: "/appointments",
     getAll: "/appointments",
@@ -23,7 +23,7 @@ const apiRoutes = {
       `/appointments?patientName=${encodeURIComponent(name)}`,
   },
 
-  // Лікарі
+  // === Лікарі ===
   doctors: {
     base: "/admin/doctors",
     getAll: "/admin/doctors",
@@ -31,8 +31,8 @@ const apiRoutes = {
     getById: (id) => `/admin/doctors/${id}`,
     update: (id) => `/admin/doctors/${id}`,
     delete: (id) => `/admin/doctors/${id}`,
-    filterByDoctortName: (name) =>
-      `/appointments?doctorName=${encodeURIComponent(name)}`,
+    filterByDoctorName: (name) =>
+      `/admin/doctors?name=${encodeURIComponent(name)}`,
   },
 };
 

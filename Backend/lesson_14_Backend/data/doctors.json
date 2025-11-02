@@ -1,0 +1,56 @@
+[
+  {
+    "id": "d004",
+    "fullName": "Ігор Лисенко 11",
+    "specialty": "Ортопед",
+    "email": "lys.igor@hospital.ua",
+    "phone": "+380931122334",
+    "room": "104",
+    "notes": "",
+    "specialization": "22",
+    "birthDate": "",
+    "gender": ""
+  },
+  {
+    "id": "d005",
+    "fullName": "Світлана Гончар",
+    "specialty": "Невролог",
+    "email": "svit.gonchar@gmail.com",
+    "phone": "+380682223344",
+    "room": "105",
+    "notes": "",
+    "specialization": "11"
+  },
+  {
+    "id": "d868f062-6d09-43eb-9335-9c8c7f81db77",
+    "fullName": "Баба Галя 1",
+    "specialty": "широкого профілю",
+    "room": "22",
+    "email": "ivan@example.com",
+    "phone": "333",
+    "notes": "33",
+    "specialization": "широкого профілю"
+  },
+  {
+    "id": "aafc6dc6-4a08-4783-9ff3-0b23b2d433cd",
+    "fullName": "22",
+    "birthDate": "",
+    "gender": "",
+    "phone": "22",
+    "email": "Q@gamil.com",
+    "specialization": "22",
+    "room": "22",
+    "notes": ""
+  },
+  {
+    "id": "26b7bf0c-83a5-47ab-b559-c01130914d1b",
+    "fullName": "11",
+    "birthDate": "",
+    "gender": "",
+    "phone": "11",
+    "email": "11@gmail.com",
+    "specialization": "1",
+    "room": "1",
+    "notes": ""
+  }
+]

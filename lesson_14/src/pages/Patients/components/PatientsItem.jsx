@@ -22,32 +22,60 @@ function PatientsItem({ item }) {
     );
 
   return (
-    <li className="bg-white shadow-md rounded-2xl p-5 flex justify-between items-center mb-4 hover:shadow-lg transition-shadow duration-200">
-      <div className="flex flex-col space-y-1">
-        <p className="font-semibold text-lg text-gray-800">{item.fullName}</p>
-        <p className="text-gray-500">{item.gender}</p>
-        <p className="text-gray-500">{item.phone}</p>
+    <li className="group relative border border-gray-200/50 dark:border-gray-700/50 rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between bg-gradient-to-br from-white to-violet-50/20 dark:from-gray-900 dark:to-violet-900/10 hover:shadow-xl hover:shadow-violet-100/20 dark:hover:shadow-violet-900/10 hover:scale-[1.01] hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-sm overflow-hidden mb-4">
+      {/* Декоративный градиентный акцент */}
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-violet-500 via-fuchsia-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-2xl"></div>
+
+      <div className="flex items-center gap-4 flex-1">
+        {/* Аватар */}
+        <div className="w-14 h-14 rounded-full bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-lg flex-shrink-0">
+          {item.fullName.charAt(0)}
+        </div>
+
+        {/* Информация о пациенте */}
+        <div className="flex flex-col space-y-1.5">
+          <span className="text-lg font-bold text-gray-900 dark:text-gray-50 tracking-tight">
+            {item.fullName}
+          </span>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <span className="text-gray-600 dark:text-gray-300 flex items-center gap-1.5">
+              <span className="text-fuchsia-500">⚧</span>
+              {item.gender === "male"
+                ? "Чоловік"
+                : item.gender === "female"
+                  ? "Жінка"
+                  : item.gender}
+            </span>
+            <span className="text-gray-600 dark:text-gray-300 flex items-center gap-1.5">
+              <span className="text-pink-500">📱</span>
+              {item.phone}
+            </span>
+          </div>
+        </div>
       </div>
 
-      <div className="flex items-center space-x-3">
+      {/* Кнопки действий */}
+      <div className="flex items-center gap-2 mt-4 sm:mt-0 sm:ml-4">
         <Link
           to={frontRoutes.navigate.patients.details(item.id)}
-          className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
+          className="px-4 py-2 bg-gradient-to-r from-violet-500 to-fuchsia-600 hover:from-violet-600 hover:to-fuchsia-700 text-white rounded-xl font-medium shadow-md hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105 text-sm"
         >
-          Деталі
+          👁️ Деталі
         </Link>
         <Link
           to={frontRoutes.navigate.patients.edit(item.id)}
-          className="text-yellow-600 hover:text-yellow-800 font-medium transition-colors"
+          className="px-4 py-2 bg-gradient-to-r from-fuchsia-500 to-pink-600 hover:from-fuchsia-600 hover:to-pink-700 text-white rounded-xl font-medium shadow-md hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300 hover:scale-105 text-sm"
         >
-          Редагувати
+          ✏️ Редагувати
         </Link>
         <button
           onClick={onDelete}
           disabled={isLoading}
-          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className={`px-4 py-2 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white rounded-xl font-medium shadow-md hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105 text-sm ${
+            isLoading ? "opacity-50 cursor-not-allowed grayscale" : ""
+          }`}
         >
-          {isLoading ? "Видалення..." : "Видалити"}
+          {isLoading ? "⏳ Видалення..." : "🗑️ Видалити"}
         </button>
       </div>
     </li>

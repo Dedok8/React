@@ -17,24 +17,28 @@ function PaginationBlock({ totalPages, page, setPage }) {
   }
 
   return (
-    <div className="flex justify-center items-center mt-6 gap-2">
+    <div className="flex justify-center items-center mt-8 gap-2 flex-wrap">
       <button
         onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
         disabled={page === 1}
-        className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+        className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium hover:from-blue-600 hover:to-blue-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none shadow-md"
       >
-        Назад
+        ← Назад
       </button>
 
       {visiblePages[0] > 1 && (
         <>
           <button
             onClick={() => setPage(1)}
-            className="w-10 h-10 flex items-center justify-center rounded bg-gray-200 text-gray-700 hover:bg-gray-300"
+            className="w-11 h-11 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 font-semibold hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md"
           >
             1
           </button>
-          {visiblePages[0] > 2 && <span className="px-2">...</span>}
+          {visiblePages[0] > 2 && (
+            <span className="px-2 text-gray-400 dark:text-gray-500 font-bold">
+              •••
+            </span>
+          )}
         </>
       )}
 
@@ -42,10 +46,10 @@ function PaginationBlock({ totalPages, page, setPage }) {
         <button
           key={p}
           onClick={() => setPage(p)}
-          className={`w-10 h-10 flex items-center justify-center rounded transition-colors ${
+          className={`w-11 h-11 flex items-center justify-center rounded-xl font-semibold transition-all duration-300 hover:scale-110 shadow-sm ${
             p === page
-              ? "bg-blue-600 text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              ? "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-blue-500/30 scale-110"
+              : "bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-md"
           }`}
         >
           {p}
@@ -55,11 +59,13 @@ function PaginationBlock({ totalPages, page, setPage }) {
       {visiblePages[visiblePages.length - 1] < totalPages && (
         <>
           {visiblePages[visiblePages.length - 1] < totalPages - 1 && (
-            <span className="px-2">...</span>
+            <span className="px-2 text-gray-400 dark:text-gray-500 font-bold">
+              •••
+            </span>
           )}
           <button
             onClick={() => setPage(totalPages)}
-            className="w-10 h-10 flex items-center justify-center rounded bg-gray-200 text-gray-700 hover:bg-gray-300"
+            className="w-11 h-11 flex items-center justify-center rounded-xl bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-200 font-semibold hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-md"
           >
             {totalPages}
           </button>
@@ -69,9 +75,9 @@ function PaginationBlock({ totalPages, page, setPage }) {
       <button
         onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
         disabled={page === totalPages}
-        className="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+        className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium hover:from-blue-600 hover:to-blue-700 disabled:from-gray-300 disabled:to-gray-400 disabled:cursor-not-allowed transition-all duration-300 hover:scale-105 hover:shadow-lg disabled:hover:scale-100 disabled:hover:shadow-none shadow-md"
       >
-        Вперед
+        Вперед →
       </button>
     </div>
   );

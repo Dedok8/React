@@ -1,11 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import apiRoutes from "./apiRoutes";
-
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://medical-backend-1-0h6m.onrender.com/",
-    // baseUrl: "https://lesson-14-backend.onrender.com/",
+    baseUrl: "https://lesson-14-backend-uepj.onrender.com/",
   }),
   tagTypes: ["patients", "appointments", "doctors"],
   endpoints: (builder) => ({
@@ -14,17 +12,14 @@ export const api = createApi({
       query: () => apiRoutes.patients.getAll,
       providesTags: ["patients"],
     }),
-
     getPatientsById: builder.query({
       query: (id) => apiRoutes.patients.getById(id),
       providesTags: (result, error, id) => [{ type: "patients", id }],
     }),
-
     getPatientsFilterName: builder.query({
       query: (name) => apiRoutes.patients.filterByName(name),
       providesTags: ["patients"],
     }),
-
     createPatients: builder.mutation({
       query: (data) => ({
         url: apiRoutes.patients.create,
@@ -44,7 +39,6 @@ export const api = createApi({
         "patients",
       ],
     }),
-
     deletePatients: builder.mutation({
       query: (id) => ({
         url: apiRoutes.patients.delete(id),
@@ -58,17 +52,14 @@ export const api = createApi({
       query: () => apiRoutes.doctors.getAll,
       providesTags: ["doctors"],
     }),
-
     getDoctorsById: builder.query({
       query: (id) => apiRoutes.doctors.getById(id),
       providesTags: (result, error, id) => [{ type: "doctors", id }],
     }),
-
     getDoctorsFilterName: builder.query({
-      query: (name) => apiRoutes.doctors.filterByDoctortName(name),
+      query: (name) => apiRoutes.doctors.filterByDoctorName(name),
       providesTags: ["doctors"],
     }),
-
     createDoctor: builder.mutation({
       query: (data) => ({
         url: apiRoutes.doctors.create,
@@ -77,7 +68,6 @@ export const api = createApi({
       }),
       invalidatesTags: ["doctors"],
     }),
-
     updateDoctor: builder.mutation({
       query: ({ id, data }) => ({
         url: apiRoutes.doctors.update(id),
@@ -89,7 +79,6 @@ export const api = createApi({
         "doctors",
       ],
     }),
-
     deleteDoctor: builder.mutation({
       query: (id) => ({
         url: apiRoutes.doctors.delete(id),
@@ -103,22 +92,18 @@ export const api = createApi({
       query: () => apiRoutes.appointments.getAll,
       providesTags: ["appointments"],
     }),
-
     getAppointmentsById: builder.query({
       query: (id) => apiRoutes.appointments.getById(id),
       providesTags: (result, error, id) => [{ type: "appointments", id }],
     }),
-
     getAppointmentsFilterName: builder.query({
       query: (name) => apiRoutes.appointments.filterByPatientName(name),
       providesTags: ["appointments"],
     }),
-
     getAppointmentsFilterData: builder.query({
-      query: (data) => apiRoutes.appointments.filterByDate(data),
+      query: (date) => apiRoutes.appointments.filterByDate(date),
       providesTags: ["appointments"],
     }),
-
     createAppointments: builder.mutation({
       query: (data) => ({
         url: apiRoutes.appointments.create,
@@ -127,7 +112,6 @@ export const api = createApi({
       }),
       invalidatesTags: ["appointments"],
     }),
-
     updateAppointments: builder.mutation({
       query: ({ id, data }) => ({
         url: apiRoutes.appointments.update(id),
@@ -136,9 +120,9 @@ export const api = createApi({
       }),
       invalidatesTags: (result, error, { id }) => [
         { type: "appointments", id },
+        "appointments",
       ],
     }),
-
     deleteAppointments: builder.mutation({
       query: (id) => ({
         url: apiRoutes.appointments.delete(id),

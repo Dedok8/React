@@ -1,14 +1,18 @@
 import MainLayout from "@/components/layouts/MainLayout";
 import Home from "@/pages/Home";
 import Page404 from "@/pages/Page404";
-import PatientsManager from "@/pages/Patients/PatientsManager";
-import PatientsForm from "@/pages/Patients/components/PatientsForm";
-import PatientsDetails from "@/pages/Patients/components/PatientsDetails";
-import AppointmensManager from "@/pages/appointments/AppointmentsManager";
-import AppointmensForm from "@/pages/appointments/components/AppointmentsForm";
-import AppointmentsDetails from "@/pages/appointments/components/AppointmentsDetails";
+
+// === Patients ===
+import PatientsManager from "@/pages/patients/PatientsManager";
+import PatientsForm from "@/pages/patients/components/PatientsForm";
+import PatientsDetails from "@/pages/patients/components/PatientsDetails";
+
+// === Appointments ===
+import AppointmentsManager from "@/pages/appointments/AppointmentsManager";
+import AppointmentsForm from "@/pages/appointments/components/AppointmentsForm";
+
+// === Doctors ===
 import DoctorsManager from "@/pages/doctors/DoctorsManager";
-import DoctorsDetails from "@/pages/doctors/components/DoctorsDetails";
 import DoctorsForm from "@/pages/doctors/components/DoctorsForm";
 
 export const routes = [
@@ -17,11 +21,8 @@ export const routes = [
     element: <MainLayout />,
     errorElement: <Page404 />,
     children: [
-      {
-        index: true,
-        element: <Home />,
-        meta: { title: "Home" },
-      },
+      { index: true, element: <Home />, meta: { title: "Home" } },
+
       // === Patients ===
       {
         path: "patients",
@@ -36,22 +37,24 @@ export const routes = [
           { path: ":id", element: <PatientsDetails /> },
         ],
       },
+
       // === Appointments ===
       {
         path: "appointments",
         children: [
           {
             index: true,
-            element: <AppointmensManager />,
+            element: <AppointmentsManager />,
             meta: { title: "Прийоми" },
           },
-          { path: ":id/edit", element: <AppointmensForm /> },
-          { path: ":id", element: <AppointmentsDetails /> },
+          { path: "new", element: <AppointmentsForm /> },
+          { path: ":id/edit", element: <AppointmentsForm /> },
         ],
       },
+
       // === Doctors ===
       {
-        path: "doctors",
+        path: "admin/doctors",
         children: [
           {
             index: true,
@@ -60,7 +63,6 @@ export const routes = [
           },
           { path: "new", element: <DoctorsForm /> },
           { path: ":id/edit", element: <DoctorsForm /> },
-          { path: ":id", element: <DoctorsDetails /> },
         ],
       },
     ],

@@ -1,5 +1,11 @@
+import AppointmensList from "./components/AppointmentsList";
+
 function AppointmensManager() {
-  return <>Appointmens M</>;
+  return (
+    <>
+      <AppointmensList />
+    </>
+  );
 }
 
 export default AppointmensManager;

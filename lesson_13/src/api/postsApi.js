@@ -4,7 +4,7 @@ export const postsApi = createApi({
   reducerPath: "postsApi",
   baseQuery: fetchBaseQuery({
     // baseUrl: "http://localhost:3000",
-    baseUrl: "https://lesson-13-back-xqjk.onrender.com/",
+    baseUrl: "https://posts-backend-ilp6.onrender.com/",
   }),
   tagTypes: ["Post", "Posts"],
   endpoints: (build) => ({
@@ -95,7 +95,7 @@ export const postsApi = createApi({
         method: "POST",
         body: newPost,
       }),
-      invalidatesTags: [{ type: "Post", id: "LIST" }],
+      invalidatesTags: [{ type: "Posts", id: "LIST" }],
     }),
   }),
 });

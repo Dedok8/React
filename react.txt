@@ -9,3 +9,6 @@
  tailwindcss()    @import "tailwindcss";
  import tailwindcss from '@tailwindcss/vite'
 
+
+ npm install -g netlify-cli
+

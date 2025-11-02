@@ -11,4 +11,9 @@
 
 
  npm install -g netlify-cli
+ netlify login
+ netlify init
+ npm run build
+ netlify deploy
+ netlify deploy --prod
 

@@ -4,10 +4,15 @@
 
  npm i react-router
 
+ npm install firebase
+
 
  npm install tailwindcss @tailwindcss/vite    
+ 
  tailwindcss()    @import "tailwindcss";
  import tailwindcss from '@tailwindcss/vite'
+
+ npm install sass
 
 
  npm install -g netlify-cli

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "password": "$2b$10$2bPQq51OQrWdMeTCMdzO3.vP6M/NHTUAlzcEbpV6gPC7VFeB9IWv6",
+    "role": "admin",
+    "name": "Адміністратор"
+  },
+  {
+    "id": 2,
+    "username": "manager",
+    "password": "$2b$10$fUza4du3oghq75m7nohzIOtOiFr9H.jSUaN76o4utY5gyHp7T790.",
+    "role": "manager",
+    "name": "Менеджер"
+  },
+  {
+    "id": 3,
+    "username": "client",
+    "password": "$2b$10$15I.IfRdpr.MYsbHBUYXbu0Cv.vnVsHGaLw8H3CHawpFNS0b/Rms.",
+    "role": "client",
+    "name": "Клієнт"
+  }
+]

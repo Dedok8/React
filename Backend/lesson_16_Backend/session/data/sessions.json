@@ -1,0 +1,32 @@
+{
+  "uEGj5ce1gkVpPUeh9B253wsA1qpXhsQv": {
+    "userId": 1,
+    "userRole": "admin",
+    "createdAt": "2025-08-04T19:56:38.092Z"
+  },
+  "VgKRs6kaFt_e6HsLFDx4WlItJBgw1PP2": {
+    "userId": 1,
+    "userRole": "admin",
+    "createdAt": "2025-08-05T09:28:41.805Z"
+  },
+  "bXfKi5DR1EJUB8j_xY7HxOIByP1mP6d7": {
+    "userId": 1,
+    "userRole": "admin",
+    "createdAt": "2025-08-05T09:42:34.675Z"
+  },
+  "JY90Cqva9BvXwqEcq4Fc5F98iuo-GxtA": {
+    "userId": 1,
+    "userRole": "admin",
+    "createdAt": "2025-08-05T15:30:04.465Z"
+  },
+  "MbNT0JNGUk_9AsRpx0dfHDJw_C96dumH": {
+    "userId": 1,
+    "userRole": "admin",
+    "createdAt": "2025-08-05T15:48:02.570Z"
+  },
+  "h77gx7-ITQNNRArnzoTGAA6KO4bCrP5r": {
+    "userId": 2,
+    "userRole": "manager",
+    "createdAt": "2025-08-05T15:49:31.360Z"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "HomePage": {
+    "title": "Welcome !",
+    "button": "Click me",
+    "description": "Welcome to Firebase Shop!",
+    "menuLabel": "Home"
+  },
+  "LoginPage": {
+    "menuLabel": "Log in"
+  },
+  "UsersPage": {
+    "title": "Users",
+    "menuLabel": "Users"
+  },
+  "EditUser": {
+    "title": "Edit user",
+    "menuLabel": "Edit user"
+  },
+  "ProductsPage": {
+    "title": "Product catalog",
+    "productOwner": "Product owner",
+    "menuLabel": "Products"
+  },
+  "EditProduct": {
+    "title": "Edit product",
+    "menuLabel": "Edit product"
+  },
+  "AddProduct": {
+    "title": "Add product",
+    "menuLabel": "Add product"
+  },
+  "Cart": {
+    "title": "My cart",
+    "permission": "Only for authenticated users",
+    "price": "Price",
+    "sum": "Sum",
+    "totalPrice": "Total cost",
+    "empty": "Cart is empty",
+    "menuLabel": "Cart",
+    "quantity": "Quantity",
+    "name": "Name",
+    "noName": "No name",
+    "grn": "UAH",
+    "addCart": "Add to cart"
+  },
+  "Product": {
+    "addToFav": "Add to favorites",
+    "owner": "Owner"
+  },
+  "Favorites": {
+    "permission": "Only for authenticated users",
+    "empty": "Favorites list is empty",
+    "title": "Favorite products",
+    "menuLabel": "Favorites",
+    "addToFavorite": "Add to favorites"
+  },
+  "NotFound": {
+    "title": "Page not found"
+  },
+  "Forbidden": {
+    "title": "Access denied"
+  },
+  "common": {
+    "errorMessage": "Error",
+    "googleAuthError": "Google authentication error",
+    "loadingMessage": "Loading"
+  },
+  "buttons": {
+    "save": "Save",
+    "add": "Add",
+    "addProcessing": "Editing...",
+    "edit": "Edit",
+    "editProcessing": "Adding...",
+    "addProduct": "Add product",
+    "addToFav": "Add to favorites",
+    "editUser": "Edit user",
+    "deleteUser": "Delete user",
+    "delete": "Delete",
+    "login": "Log in",
+    "logout": "Log out",
+    "signup": "Sign up"
+  },
+  "inputs": {
+    "email": "Email",
+    "name": "Name",
+    "password": "Password",
+    "prodName": "Product name",
+    "price": "Price",
+    "imageUrl": "Image URL",
+    "description": "Description"
+  },
+  "error": {
+    "err": "Error",
+    "errLog": "Login error",
+    "googleAuthError": "Google authentication error",
+    "errReg": "Registration error"
+  }
+}

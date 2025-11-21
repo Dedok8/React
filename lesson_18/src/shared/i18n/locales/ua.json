@@ -1,0 +1,102 @@
+{
+  "HomePage": {
+    "title": "Welcome !",
+    "button": "Click me",
+    "description": "Вітаємо у Firebase Shop!",
+    "menuLabel": "Головна"
+  },
+  "LoginPage": {
+    "menuLabel": "Увійти"
+  },
+  "UsersPage": {
+    "title": "Користувачі",
+    "menuLabel": "Користувачі"
+  },
+  "EditUser": {
+    "title": "Редагувати користувача",
+    "menuLabel": "Редагувати користувача"
+  },
+  "ProductsPage": {
+    "title": "Каталог продуктів",
+    "productOwner": "Власник товару",
+    "menuLabel": "Товари"
+  },
+  "EditProduct": {
+    "title": "Редагування товару",
+    "menuLabel": "Редагувати товар"
+  },
+  "AddProduct": {
+    "title": "Додавання товару",
+    "menuLabel": "Додати товар"
+  },
+  "Cart": {
+    "title": "Мій кошик",
+    "permission": "Тільки для авторизованих користувачів",
+    "price": "Ціна",
+    "sum": "Сума",
+    "totalPrice": "Загальна вартість",
+    "empty": "Кошик порожній",
+    "menuLabel": "Кошик",
+    "quantity": "Кількість",
+    "name": "Назва",
+    "noName": "Без назви",
+    "grn": "грн",
+    "addCart": "Додати в кошик"
+  },
+  "Product": {
+    "addToFav": "Додати в обране",
+    "owner": "Власник"
+  },
+  "Favorites": {
+    "permission": "Тільки для авторизованих користувачів",
+    "empty": "Обрані товари відсутні",
+    "title": "Обрані товари",
+    "menuLabel": "Обране",
+    "addToFavorite": "Додати в обране"
+  },
+  "NotFound": {
+    "title": "Сторінку не знайдено"
+  },
+  "Forbidden": {
+    "title": "Доступ заборонено"
+  },
+  "common": {
+    "errorMessage": "Помилка",
+    "googleAuthError": "Помилка Google-автентифікації",
+    "loadingMessage": "Завантаження"
+  },
+  "buttons": {
+    "save": "Зберегти",
+    "add": "Додати",
+    "addProcessing": "Редагування...",
+    "edit": "Редагувати",
+    "editProcessing": "Додавання...",
+    "addProduct": "Додати продукт",
+    "addToFav": "Додати в обране",
+    "editUser": "Редагувати користувача",
+    "deleteUser": "Видалити користувача",
+    "delete": "Видалити",
+    "login": "Увійти",
+    "logout": "Вийти",
+    "signup": "Зареєструватися"
+  },
+  "inputs": {
+    "email": "Електронна пошта",
+    "name": "Ім'я",
+    "password": "Пароль",
+    "prodName": "Назва товару",
+    "price": "Ціна",
+    "imageUrl": "Посилання на зображення",
+    "description": "Опис"
+  },
+  "alt": {
+    "delete": "Іконка видалення",
+    "edit": "Іконка редагування"
+  },
+  "error": {
+    "err": "Помилка",
+    "errLog": "Помилка входу",
+    "googleAuthError": "Помилка Google-автентифікації",
+    "errReg": "Помилка реєстрації"
+  }
+}
